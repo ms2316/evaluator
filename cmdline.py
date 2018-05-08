@@ -1,25 +1,13 @@
 # Command line interface module
 
-import random
-import string
-
-FNAME_LEN = 30
-
 def repo_size(redir):
     print('gdu -bs .git/objects >> {} &&'.format(redir))
     print('echo ----------- >> {} &&'.format(redir))
 
-def write_file():
-    rstring = random_string(FNAME_LEN)
-    for x in range(10):
-        print('echo {} >> f_{} && '.format(random_string(40), rstring))
-
 def make_commit(msg):
-    write_file()
     print('git add . && git commit -m "{}" && '.format(msg))
 
 def amend(msg):
-    write_file()
     print('git add . && git commit --amend -m "{}" && '.format(msg))
 
 def branch_create(bname):
@@ -54,4 +42,3 @@ def init_configs():
 def finish_test():
     print('echo Done')
     print("'\n\ntest_done")
-
